@@ -1,0 +1,52 @@
+/* ===== GERAL ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(30, 30, 30, 0.6)),
+              url(../img/monalisa-detalhe.webp)center/cover no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f5a623 !important;
+}
+
+/* ===== SEÇÃO DE DESTAQUE ===== */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== BOTÕES ===== */
+.btn-outline-light:hover {
+  background-color: #f5a623;
+  border-color: #f5a623;
+  color: #000;
+}
