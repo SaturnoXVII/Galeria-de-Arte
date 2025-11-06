@@ -11,8 +11,92 @@
   <!-- Animate On Scroll -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== HERO ===== */
+    .hero {
+      background: url('img/monalisa-detalhe.webp') center/cover no-repeat;
+      height: 85vh;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    }
+
+    /* ===== DESTAQUE ===== */
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .card-img-top {
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.08);
+    }
+
+    /* ===== OVERLAY COM LEGENDA ===== */
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s ease;
+    }
+    .card:hover .image-overlay {
+      opacity: 1;
+    }
+    .image-overlay h5 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #f9d342;
+    }
+    .image-overlay p {
+      font-size: 0.9rem;
+      color: #ddd;
+      margin-top: 5px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .card-body {
+      text-align: center;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -30,7 +114,7 @@
           <li class="nav-item"><a class="nav-link" href="pag3.html">Leonardo da Vinci</a></li>
           <li class="nav-item"><a class="nav-link" href="pag4.html">Jacques-Louis</a></li>
           <li class="nav-item"><a class="nav-link" href="pag5.html">Fale Conosco</a></li>
-       
+        </ul>
       </div>
     </div>
   </nav>
@@ -49,13 +133,18 @@
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
         <h2 class="fw-bold">O que você vai encontrar</h2>
-        <p class="text-muted">Uma jornada visual através da arte contemporânea e clássica.</p>
+        <p class="text-muted">Uma jornada visual através da arte clássica e moderna.</p>
       </div>
 
       <div class="row g-4">
+        <!-- Card 1 -->
         <div class="col-md-4" data-aos="zoom-in">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="/img/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg" class="card-img-top" alt="Artistas">
+          <div class="card position-relative h-100">
+            <img src="img/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg" class="card-img-top" alt="Van Gogh">
+            <div class="image-overlay">
+              <h5>Autorretrato</h5>
+              <p>Vincent van Gogh — 1889</p>
+            </div>
             <div class="card-body">
               <h5 class="card-title">Perfis de Artistas</h5>
               <p class="card-text text-muted">Conheça a história e as inspirações por trás de cada artista.</p>
@@ -63,9 +152,14 @@
           </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="img/Last_Judgement_by_Michelangelo.jpg" class="card-img-top" alt="Galeria">
+          <div class="card position-relative h-100">
+            <img src="img/Last_Judgement_by_Michelangelo.jpg" class="card-img-top" alt="Michelangelo">
+            <div class="image-overlay">
+              <h5>O Juízo Final</h5>
+              <p>Michelangelo — 1541</p>
+            </div>
             <div class="card-body">
               <h5 class="card-title">Obras</h5>
               <p class="card-text text-muted">Explore obras em alta resolução com curadoria especial.</p>
@@ -73,12 +167,17 @@
           </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="img/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg" class="card-img-top" alt="Eventos">
+          <div class="card position-relative h-100">
+            <img src="img/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg" class="card-img-top" alt="Jacques-Louis David">
+            <div class="image-overlay">
+              <h5>Napoleão Cruzando os Alpes</h5>
+              <p>Jacques-Louis David — 1801</p>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Historia</h5>
-              <p class="card-text text-muted">Fique por dentro dos contextos históricos da época dos artistas. </p>
+              <h5 class="card-title">História</h5>
+              <p class="card-text text-muted">Fique por dentro dos contextos históricos da época dos artistas.</p>
             </div>
           </div>
         </div>
@@ -96,8 +195,12 @@
 
   <!-- Animate On Scroll -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Custom JS -->
-  <script src="js/script.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
+
